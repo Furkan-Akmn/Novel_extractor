@@ -37,7 +37,7 @@ NOVEL_ID = None
 BASE_URL = None
 START_EPISODE_ID = None
 CHAPTER_COUNT = 1
-TARGET_LANGUAGE = 'tr'
+TARGET_LANGUAGE = 'en'
 
 DEFAULT_BROWSER_PROFILE_DIR = os.path.join(PROJECT_DIR, "browser-profile")
 SYSTEM_EDGE_USER_DATA_DIR = (
@@ -75,7 +75,7 @@ def build_parser():
         description="Extract and translate novel chapters from a starting chapter URL."
     )
     parser.add_argument("--url", help="Starting chapter URL, e.g. https://domain/novel/123/456")
-    parser.add_argument("--lang", default=None, help="Target language code. Default: tr")
+    parser.add_argument("--lang", default=None, help="Target language code. Default: en")
     parser.add_argument("--count", type=positive_int, default=None, help="Number of chapters to download. Default: 1")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, help="Folder for downloaded chapters.")
     parser.add_argument("--profile-dir", default=None, help="Custom Edge/Chromium user data directory.")
@@ -281,8 +281,8 @@ async def main():
         return
 
     if not args.lang:
-        lang_input = prompt("Enter target language code (e.g., 'tr' for Turkish, 'en' for English) [default: tr]: ")
-        args.lang = lang_input if lang_input else 'tr'
+        lang_input = prompt("Enter target language code (e.g., 'tr' for Turkish, 'en' for English) [default: en]: ")
+        args.lang = lang_input if lang_input else 'en'
 
     if args.count is None:
         count_input = prompt("How many chapters to download? [default: 1]: ")

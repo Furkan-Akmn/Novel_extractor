@@ -25,32 +25,6 @@ This project does not include or distribute novel content. Users are responsible
 
 Do not use this tool to download, redistribute, publish, sell, or share content without permission from the rights holder.
 
-## Folder Layout
-
-```text
-.
-├── src/
-│   └── novel_extractor.py
-├── docs/
-│   ├── LEGAL_NOTICE.md
-│   └── RELEASE_CHECKLIST.md
-├── setup.bat
-├── run_novel_extractor.bat
-├── update_dependencies.bat
-├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
-```
-
-Generated folders are ignored by Git:
-
-```text
-.venv/
-novel_chapters/
-browser-profile/
-__pycache__/
-```
 
 ## Run
 
@@ -63,14 +37,14 @@ Interactive mode:
 Command-line mode:
 
 ```powershell
-.\run_novel_extractor.bat --url "https://example.com/novel/123/456" --lang tr --count 10
+.\run_novel_extractor.bat --url "https://example.com/novel/123/456" --lang en --count 10
 ```
 
 ## Options
 
 ```text
 --url                  Starting chapter URL in the format https://domain/novel/<novel_id>/<episode_id>
---lang                 Target language code. Default: tr
+--lang                 Target language code. Default: en
 --count                Number of chapters to process. Default: 1
 --output-dir           Output folder. Default: ./novel_chapters
 --profile-dir          Custom Edge/Chromium user data folder
@@ -91,9 +65,9 @@ novel_chapters/<novel_id>/
 Example:
 
 ```text
-chapter_1_tr.txt
-chapter_2_tr.txt
-merged_novel_123_tr.txt
+chapter_1_en.txt
+chapter_2_en.txt
+merged_novel_123_en.txt
 failed_chapters.txt
 ```
 
