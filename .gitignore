@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+env/
+
+novel_chapters/
+browser-profile/
+*.pdf
+
+.env
+.DS_Store
+Thumbs.db
